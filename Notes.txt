@@ -1,0 +1,8 @@
+What is nodejs?
+It lets js developers create application BE (for e.g. connect to DB). As opposed to just run js code on clients like browser, it can now run on servers.
+NodeJS is the JS runtime built on Chrome's V8 js engine.
+
+npm init
+Executing this command generates package.json file where we can list out all the npm dependencies that our project needs. Actually, we can ourselves install packages and npm will make sure to add it in package.json file.
+When we install something using npm i command, it creates a package-lock.json and node_modules directory. We should NEVER manually update anything under node_modules.
+package-lock.json contains additional information about installation like the url from where the dependency was downloaded, the version of it, etc.
