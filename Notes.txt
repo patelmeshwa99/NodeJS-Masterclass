@@ -6,3 +6,9 @@ npm init
 Executing this command generates package.json file where we can list out all the npm dependencies that our project needs. Actually, we can ourselves install packages and npm will make sure to add it in package.json file.
 When we install something using npm i command, it creates a package-lock.json and node_modules directory. We should NEVER manually update anything under node_modules.
 package-lock.json contains additional information about installation like the url from where the dependency was downloaded, the version of it, etc.
+
+nodemon
+Used as live server for js file that we execute using node command
+
+yards
+Handle/parse the command line arguments
