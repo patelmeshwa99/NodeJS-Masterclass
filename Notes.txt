@@ -10,5 +10,5 @@ package-lock.json contains additional information about installation like the ur
 nodemon
 Used as live server for js file that we execute using node command
 
-yards
+yargs
 Handle/parse the command line arguments
