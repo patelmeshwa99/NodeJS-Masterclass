@@ -1,17 +1,16 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const getNotes = function() {
+const getNotes = () => {
+    // Not converting this to shorthand syntax since we are going to add code here soon
     return 'These are your notes....'
 }
 
-const addNote = function(title, body) {
+const addNote = (title, body) => {
     const notes = loadNotes();
 
     // Don't add redundant entry
-    const duplicateNotes = notes.filter(function(note) {
-        return note.title === title
-    })
+    const duplicateNotes = notes.filter((note) => note.title === title)
 
     if (duplicateNotes.length === 0) {
         // Push new note to already existing notes array
@@ -29,7 +28,7 @@ const addNote = function(title, body) {
 
 }
 
-function saveNotes(notes) {
+const saveNotes = (notes) => {
     const dataString = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataString);
 }
@@ -39,9 +38,7 @@ const removeNote = function(title) {
 
     // Filtered notes that doesn't have the same title
     // These notes are now supposed to be there on the file
-    const filteredNotes = notes.filter(function(note) {
-        return note.title !== title;
-    })
+    const filteredNotes = notes.filter((note) => note.title !== title)
 
     // Only if note that is to be removed is found, update the notes in fs
     // Else, just log that note not found
@@ -54,7 +51,7 @@ const removeNote = function(title) {
     }
 }
 
-const loadNotes = function() {
+const loadNotes = () => {
     try {
         const notesBuffer = fs.readFileSync('notes.json')
         const notesString = notesBuffer.toString()

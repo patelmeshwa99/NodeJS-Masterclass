@@ -20,7 +20,7 @@ yargs.command({
             demandOption: true
         }
     },
-    handler: function (argv) {
+    handler (argv) {
         // Add newly created note to fs
         notesUtil.addNote(argv.title, argv.body)
     }
@@ -39,7 +39,7 @@ yargs.command({
             demandOption: true
         }
     },
-    handler: function () {
+    handler () {
         notesUtil.removeNote(yargs.argv.title)
     }
 });
