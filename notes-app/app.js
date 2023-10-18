@@ -44,4 +44,31 @@ yargs.command({
     }
 });
 
+// Create list command
+yargs.command({
+    command: 'list',
+    showInHelp: true,
+    describe: 'Command to list the notes',
+    handler () {
+        notesUtil.listNotes()
+    }
+});
+
+// Create read command
+yargs.command({
+    command: 'read',
+    showInHelp: true,
+    describe: 'Command to list the notes',
+    builder: {
+        title: {
+            describe: 'Title for note to be read',
+            type: 'string',
+            demandOption: true
+        }
+    },
+    handler (argv) {
+        notesUtil.readNote(argv.title)
+    }
+});
+
 yargs.parse();
