@@ -12,3 +12,8 @@ Used as live server for js file that we execute using node command
 
 yargs
 Handle/parse the command line arguments
+
+Arrow functions:
+- Use standard function format/with function keyword format when we want to use this keyword OR access other properties under the same object
+- The above mentioned format won't be able to access those properties (of the same object) from functions like forEach, nested functions, etc.
+- For that, leverage arrow function that binds the value for that property/field
