@@ -17,3 +17,12 @@ Arrow functions:
 - Use standard function format/with function keyword format when we want to use this keyword OR access other properties under the same object
 - The above mentioned format won't be able to access those properties (of the same object) from functions like forEach, nested functions, etc.
 - For that, leverage arrow function that binds the value for that property/field
+
+Debugging
+When you use the inspect option with node and open the dedicated dev tools, you will see our code wrapped with a function.
+In other programming languages, we have this main method from where the execution starts. Here, that function means that
+the code execution will start from here.
+One can also add the complete project structure to dev tools. When we do that, we can see that the wrapper function gets removed and the file that's getting executed currently has a green period to its name.
+
+Callback function
+A function that we pass as an argument to another function just to call it later on.
