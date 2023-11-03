@@ -1,9 +1,23 @@
-const request = require('request')
-const chalk = require('chalk')
+const geocode = require("./utils/geocode");
+const forecast = require("./utils/forecast");
 
-const url = 'http://api.weatherstack.com/current?access_key=ACCESS_KEY&query=India'
+const address = process.argv[2];
 
-request({ url: url, json: true}, (error, response) => {
-    console.log(chalk.red.bold(response.body.current.weather_descriptions[0]) + '. It is currently ' + response.body.current.temperature + ' degrees out. There is a ' + 
-    response.body.current.precip + '% chance of rain!')
-})
+if (!address) {
+  console.log("Please provide an address!");
+} else {
+  geocode(address, (error, { latitude, longitude, location }) => {
+    if (error) {
+      return console.log("Error", error);
+    }
+
+    forecast(latitude, longitude, (error, forecastData) => {
+      if (error) {
+        return console.log("Error", error);
+      }
+
+      console.log(location);
+      console.log(forecastData);
+    });
+  });
+}

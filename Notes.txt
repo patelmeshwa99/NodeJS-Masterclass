@@ -23,3 +23,6 @@ When you use the inspect option with node and open the dedicated dev tools, you 
 In other programming languages, we have this main method from where the execution starts. Here, that function means that
 the code execution will start from here.
 One can also add the complete project structure to dev tools. When we do that, we can see that the wrapper function gets removed and the file that's getting executed currently has a green period to its name.
+
+Callback function
+A function that we pass as an argument to another function just to call it later on.
