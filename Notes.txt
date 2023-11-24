@@ -9,6 +9,8 @@ package-lock.json contains additional information about installation like the ur
 
 nodemon
 Used as live server for js file that we execute using node command
+By default, nodemon only detects changes made in the js files. We can configure it by using -e and then comma separated list of extensions for which we want nodemon to restart The
+server if any changes are detected.
 
 yargs
 Handle/parse the command line arguments
@@ -26,3 +28,13 @@ One can also add the complete project structure to dev tools. When we do that, w
 
 Callback function
 A function that we pass as an argument to another function just to call it later on.
+
+Express
+It's a layer built on the top of the Node js that helps manage servers and routes. But it doesn't detect the new changes. So if one wants live server, nodemon should be preferred.
+By default, as response, we can send html, json, txt. But that could be an issue if the html content is huge.
+Then, we make the application to handle the static content from a specific folder.
+Dynamic web pages can be handled by template engine using express - Handlebars. It also allows us to re-use the code between files.
+To integrate handlebars into express, we need another plugin called hbs.
+Partials: to share the parts of the web page reusable across multiple pages. For this, load hbs and configure partials.
+To render that partial, we use {{>partial_name}} in the views
+
